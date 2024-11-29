@@ -27,7 +27,7 @@ Run the ddl script to create the tables
 cat src/main/resources/crosswars.sql | sqlite3 CrosswordDB.db
 ```
 
-Create an `application-local.properties` file in the resources folder:
+Create an `application-local.properties` file in the resources' folder:
 
 ```properties
 # Database
@@ -35,8 +35,15 @@ driverClassName=org.sqlite.JDBC
 url=jdbc:sqlite:CrosswordDB.db
 username=sa
 password=sa
+# Google Auth
 google.client-id=<oauth2-client-id>
 auth.auth-key=<auth-key>
+auth.enabled=false
+# Optional Email Reminders
+email.enabled=true
+email.username=<email-username>
+email.password=<email-password>
+email.debug=true
 ```
 
 ### Build & Run

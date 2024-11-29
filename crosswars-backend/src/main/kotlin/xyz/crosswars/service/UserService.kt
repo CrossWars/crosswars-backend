@@ -42,6 +42,9 @@ class UserService(
         userRepository.findUserByName(name.lowercase()).findFirst().unwrap()
             ?: throw NoContentException("Could not find user with name $name")
 
+    fun findUsersByEmailReminder(remind: Boolean): List<User> =
+        userRepository.findUsersWithEmailReminders(remind).toList()
+
     /**
      * Creates a telegram user (email is optional)
      *
